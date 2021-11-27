@@ -1,44 +1,33 @@
 import { useState } from "react"
 import './styles.css'
-import Button from "components/Button"
-
-type SelectedOption = 'addressBook' | 'addAddress'
+import AddressesBook from "components/AddressBook"
+import MainPage, { Page } from "components/MainPage"
 
 const FormPage = () => {
-  const [selectedOption, setSelectedOption] = useState<SelectedOption | null>(null)
+  const [selectedPage, setSelectedPage] = useState<Page | null>(null)
 
-  const handleAddressBookClick = () => {
-    setSelectedOption('addressBook')
+  const handlePageChange = (page: Page) => {
+    setSelectedPage(page)
   }
 
-  const handleAddClick = () => {
-    setSelectedOption('addAddress')
+  const handleAddressSelection = () => {
+    setSelectedPage(null)
   }
 
-  const getOptionPage = () => {
-    switch (selectedOption) {
+  const getPage = () => {
+    switch (selectedPage) {
       case 'addressBook':
-        return <></>
+        return <AddressesBook onSelect={handleAddressSelection} />
       case 'addAddress':
         return <></>
+      default:
+        return <MainPage onChange={handlePageChange} />
     }
   }
 
   return (
     <div className='form-page-wrapper'>
-      {selectedOption ? (
-        getOptionPage()
-      ) : (
-        <div className='buttons-wrapper'>
-          <Button onClick={handleAddressBookClick}>
-            Select from address book
-          </Button>
-          <p className='or'>Or</p>
-          <Button onClick={handleAddClick}>
-            Add new address
-          </Button>
-        </div>
-      )}
+      {getPage()}
     </div>
   )
 }
