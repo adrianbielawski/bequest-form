@@ -1,11 +1,22 @@
 import './App.css';
 import FormPage from 'components/FormPage';
+import { AddressesContext, initialState, reducer } from 'components/AddressBook/AddressesStore';
+import { useReducer } from 'react';
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const contextValue = {
+    state,
+    dispatch,
+  }
+
   return (
-    <div className="App">
-      <FormPage />
-    </div>
+    <AddressesContext.Provider value={contextValue}>
+      <div className="App">
+        <FormPage />
+      </div>
+    </AddressesContext.Provider>
   );
 }
 
