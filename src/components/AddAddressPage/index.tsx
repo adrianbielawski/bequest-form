@@ -4,6 +4,7 @@ import MainAddAddressPage, { Page } from "./MainAddAddressPage/indes"
 import NewAddressForm from "./NewAddressForm"
 import { ADD_ADDRESS, NewAddress } from "components/AddressBook/AddressesStore/types"
 import { AddressesContext } from "components/AddressBook/AddressesStore/index"
+import FindByPostcode from "./FindByPostcode/indes"
 
 interface Props {
   onExit: () => void
@@ -30,7 +31,12 @@ const AddAddressPage: React.FC<Props> = ({ onExit }) => {
   const getPage = () => {
     switch (selectedPage) {
       case 'findByPostcode':
-        return <div>find by postcode</div>
+        return (
+          <FindByPostcode
+            onSave={addNewAddress}
+            onExit={handleExit}
+          />
+        )
       case 'enterAddress':
         return (
           <NewAddressForm
