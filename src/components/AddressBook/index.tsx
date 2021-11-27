@@ -39,6 +39,7 @@ const AddressBook: React.FC<Props> = ({ onSelect }) => {
       </ul>
       <Button
         className='select-button'
+        disabled={!state.selectedAddress}
         onClick={onSelect}
       >
         Select
