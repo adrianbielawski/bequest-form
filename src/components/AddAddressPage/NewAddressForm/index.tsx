@@ -52,7 +52,10 @@ const NewAddressForm: React.FC<Props> = ({ onSave, onExit }) => {
       <Input name='thirdLine' type='text' placeholder='Third line' />
       <Input name='postcode' type='text' placeholder='Postcode' required />
       <Input name='town' type='text' placeholder='Town' required />
-      <Select name='country' placeholder='Country'>
+      <Select name='country' placeholder='Country' required>
+        <option disabled selected hidden value=''>
+          Country
+        </option>
         {getCountries()}
       </Select>
       <div className='buttons-wrapper'>
