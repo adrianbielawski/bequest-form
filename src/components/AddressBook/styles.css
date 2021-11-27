@@ -1,0 +1,26 @@
+.address-book-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.addresses {
+  overflow-y: auto;
+}
+
+.address {
+  margin: 20px 0;
+}
+
+.address:first-child {
+  margin-top: 0;
+}
+
+.address:last-child {
+  margin-bottom: 0;
+}
+
+.select-button {
+  display: block;
+  margin: 20px auto;
+}

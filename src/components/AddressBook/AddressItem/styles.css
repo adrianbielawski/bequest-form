@@ -1,0 +1,13 @@
+.address-wrapper {
+  background-color: var(--very-light-grey);
+  padding: 15px;
+}
+
+.address-wrapper.selected {
+  background-color: var(--light-grey);
+}
+
+.address-wrapper li {
+  line-height: 1.4em;
+  color: var(--grey)
+}
