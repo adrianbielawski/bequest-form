@@ -9,6 +9,7 @@ html, body, div, span, p, ul, li, input, button {
 }
 
 :root {
+  --white: #fff;
   --light-blue: #E4F3F7;
   --blue: #009BC1;
   --red: #FF4C50;
