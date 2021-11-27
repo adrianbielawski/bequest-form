@@ -1,7 +1,8 @@
 import { useState } from "react"
 import './styles.css'
-import AddressesBook from "components/AddressBook"
 import MainPage, { Page } from "components/MainPage"
+import AddressesBook from "components/AddressBook"
+import AddAddressPage from "components/AddAddressPage"
 
 const FormPage = () => {
   const [selectedPage, setSelectedPage] = useState<Page | null>(null)
@@ -19,7 +20,7 @@ const FormPage = () => {
       case 'addressBook':
         return <AddressesBook onSelect={handleAddressSelection} />
       case 'addAddress':
-        return <></>
+        return <AddAddressPage />
       default:
         return <MainPage onChange={handlePageChange} />
     }

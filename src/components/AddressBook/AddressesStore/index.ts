@@ -14,6 +14,24 @@ export const initialState: State = {
       town: 'London',
       country: 'England',
     },
+    {
+      id: '1',
+      firstLine: 'Flat 100',
+      secondLine: 'Old Kent Road',
+      thirdLine: '',
+      postcode: 'SE5 0FG',
+      town: 'London',
+      country: 'England',
+    },
+    {
+      id: '2',
+      firstLine: 'Flat 100',
+      secondLine: 'Old Kent Road',
+      thirdLine: '',
+      postcode: 'SE5 0FG',
+      town: 'London',
+      country: 'England',
+    },
   ],
 }
 
