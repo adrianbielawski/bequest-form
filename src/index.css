@@ -7,10 +7,11 @@ html, body, div, span, p, ul, li, input, button {
 }
 
 :root {
-  --light-blue: #009bc1;
+  --light-blue: #E4F3F7;
   --blue: #009BC1;
   --red: #FF4C50;
   --yellow: #FFCC1E;
+  --very-light-grey: #f3f6f6;
   --light-grey: #ececec;
   --mid-grey: #6c757d;
   --grey: #15312e;
