@@ -5,7 +5,7 @@ export const CHANGE_SELECTED_ADDRESS = 'CHANGE_SELECTED_ADDRESS'
 
 export interface AddAddress {
   type: typeof ADD_ADDRESS
-  address: Address
+  address: NewAddress
 }
 
 export interface ChangeSelectedAddress {
@@ -24,6 +24,8 @@ export interface Address {
   town: string
   country: string
 }
+
+export type NewAddress = Omit<Address, 'id'>
 
 export interface State {
   selectedAddress: Address | null

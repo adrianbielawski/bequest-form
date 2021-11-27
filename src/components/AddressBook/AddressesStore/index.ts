@@ -46,7 +46,13 @@ export const reducer = (state: State, action: Action) => {
   let newState = cloneDeep(state);
   switch (action.type) {
     case ADD_ADDRESS:
-      newState.addresses.push(action.address)
+      const address = {
+        id: String(newState.addresses.length),
+        ...action.address,
+      }
+      
+      newState.addresses.push(address)
+      newState.selectedAddress = address
       return newState
     case CHANGE_SELECTED_ADDRESS:
       newState.selectedAddress = action.selectedAddress

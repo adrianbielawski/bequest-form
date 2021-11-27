@@ -11,16 +11,16 @@ const FormPage = () => {
     setSelectedPage(page)
   }
 
-  const handleAddressSelection = () => {
+  const handleExit = () => {
     setSelectedPage(null)
   }
 
   const getPage = () => {
     switch (selectedPage) {
       case 'addressBook':
-        return <AddressesBook onSelect={handleAddressSelection} />
+        return <AddressesBook onSelect={handleExit} />
       case 'addAddress':
-        return <AddAddressPage />
+        return <AddAddressPage onExit={handleExit} />
       default:
         return <MainPage onChange={handlePageChange} />
     }

@@ -1,0 +1,24 @@
+.new-address-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.new-address-form-wrapper input,
+.new-address-form-wrapper select {
+  width: 300px;
+}
+
+.new-address-form-wrapper .buttons-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.new-address-form-wrapper button {
+  display: block;
+}

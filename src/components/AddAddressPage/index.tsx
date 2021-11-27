@@ -1,12 +1,30 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import './styles.css'
 import MainAddAddressPage, { Page } from "./MainAddAddressPage/indes"
+import NewAddressForm from "./NewAddressForm"
+import { ADD_ADDRESS, NewAddress } from "components/AddressBook/AddressesStore/types"
+import { AddressesContext } from "components/AddressBook/AddressesStore/index"
 
-const AddAddressPage = () => {
+interface Props {
+  onExit: () => void
+}
+
+const AddAddressPage: React.FC<Props> = ({ onExit }) => {
+  const { dispatch } = useContext(AddressesContext)
   const [selectedPage, setSelectedPage] = useState<Page | null>(null)
 
   const handlePageChange = (page: Page) => {
     setSelectedPage(page)
+  }
+
+  const handleExit = () => {
+    setSelectedPage(null)
+  }
+
+  const addNewAddress = (address: NewAddress) => {
+    dispatch({ type: ADD_ADDRESS, address })
+    setSelectedPage(null)
+    onExit()
   }
 
   const getPage = () => {
@@ -14,9 +32,18 @@ const AddAddressPage = () => {
       case 'findByPostcode':
         return <div>find by postcode</div>
       case 'enterAddress':
-        return <div>enter address</div>
+        return (
+          <NewAddressForm
+            onSave={addNewAddress}
+            onExit={handleExit}
+          />
+        )
       default:
-        return <MainAddAddressPage onChange={handlePageChange}/>
+        return (
+          <MainAddAddressPage
+            onChange={handlePageChange}
+          />
+        )
     }
   }
 
