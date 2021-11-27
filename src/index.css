@@ -4,6 +4,7 @@ html, body, div, span, p, ul, li, input, button {
   font-family: DM Sans, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 :root {
@@ -15,4 +16,8 @@ html, body, div, span, p, ul, li, input, button {
   --light-grey: #ececec;
   --mid-grey: #6c757d;
   --grey: #15312e;
+}
+
+p {
+  color: var(--mid-grey);
 }
