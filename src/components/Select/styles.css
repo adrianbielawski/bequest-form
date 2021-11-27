@@ -1,0 +1,15 @@
+.select {
+  background-color: var(--light-grey);
+  color: var(--grey);
+  height: 56px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+}
+
+.select::placeholder {
+  color: var(--mid-grey);
+}
