@@ -10,13 +10,32 @@
   padding: 30px;
 }
 
-.find-by-postcode-wrapper .error-message {
+.find-by-postcode-wrapper .error-message,
+.find-by-postcode-wrapper .selected-address {
   font-size: 18px;
+}
+
+.find-by-postcode-wrapper .error-message {
+  color: var(--red)
+}
+
+.find-by-postcode-wrapper .form-wrapper {
+  position: relative;
 }
 
 .find-by-postcode-wrapper input {
   width: 300px;
   margin-right: 20px;
+}
+
+.find-by-postcode-wrapper .addresses {
+  position: absolute;
+  top: calc(100% + 10px);
+  background-color: var(--white);
+  width: 100%;
+  height: 40vh;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+  overflow-y: auto;
 }
 
 .find-by-postcode-wrapper .buttons button:first-child {
