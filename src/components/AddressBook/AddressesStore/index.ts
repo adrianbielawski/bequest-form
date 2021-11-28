@@ -4,35 +4,7 @@ import { Action, AddressesContextType, ADD_ADDRESS, CHANGE_SELECTED_ADDRESS, Sta
 
 export const initialState: State = {
   selectedAddress: null,
-  addresses: [
-    {
-      id: '0',
-      firstLine: 'Flat 100',
-      secondLine: 'Old Kent Road',
-      thirdLine: '',
-      postcode: 'SE5 0FG',
-      town: 'London',
-      country: 'England',
-    },
-    {
-      id: '1',
-      firstLine: 'Flat 100',
-      secondLine: 'Old Kent Road',
-      thirdLine: '',
-      postcode: 'SE5 0FG',
-      town: 'London',
-      country: 'England',
-    },
-    {
-      id: '2',
-      firstLine: 'Flat 100',
-      secondLine: 'Old Kent Road',
-      thirdLine: '',
-      postcode: 'SE5 0FG',
-      town: 'London',
-      country: 'England',
-    },
-  ],
+  addresses: [],
 }
 
 const initialContext: AddressesContextType = {

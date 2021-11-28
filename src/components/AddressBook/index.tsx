@@ -33,25 +33,31 @@ const AddressBook: React.FC<Props> = ({ onSelect, onExit }) => {
     )
   })
 
+  const hasAddresses = state.addresses.length > 0
+
   return (
     <div className='address-book-wrapper'>
       <ul className='addresses'>
-        {addressComponents}
+        {hasAddresses ? (
+          addressComponents
+        ) : (
+          <p className='no-addresses'>
+            You have no addresses in your address book
+          </p>
+        )}
       </ul>
       <div className='buttons'>
-        <Button
-          className='exit-button'
-          onClick={onExit}
-        >
+        <Button onClick={onExit}>
           Exit
         </Button>
-        <Button
-          className='select-button'
-          disabled={!state.selectedAddress}
-          onClick={onSelect}
-        >
-          Select
-        </Button>
+        {hasAddresses && (
+          <Button
+            disabled={!state.selectedAddress}
+            onClick={onSelect}
+          >
+            Select
+          </Button>
+        )}
       </div>
     </div>
   )
