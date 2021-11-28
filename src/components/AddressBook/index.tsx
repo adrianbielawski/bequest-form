@@ -6,9 +6,10 @@ import { AddressesContext } from "./AddressesStore"
 
 interface Props {
   onSelect: () => void
+  onExit: () => void
 }
 
-const AddressBook: React.FC<Props> = ({ onSelect }) => {
+const AddressBook: React.FC<Props> = ({ onSelect, onExit }) => {
   const { state, dispatch } = useContext(AddressesContext)
 
   const addressComponents = state.addresses.map(address => {
@@ -37,13 +38,21 @@ const AddressBook: React.FC<Props> = ({ onSelect }) => {
       <ul className='addresses'>
         {addressComponents}
       </ul>
-      <Button
-        className='select-button'
-        disabled={!state.selectedAddress}
-        onClick={onSelect}
-      >
-        Select
-      </Button>
+      <div className='buttons'>
+        <Button
+          className='exit-button'
+          onClick={onExit}
+        >
+          Exit
+        </Button>
+        <Button
+          className='select-button'
+          disabled={!state.selectedAddress}
+          onClick={onSelect}
+        >
+          Select
+        </Button>
+      </div>
     </div>
   )
 }

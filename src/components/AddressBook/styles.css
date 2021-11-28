@@ -4,23 +4,28 @@
   height: 100%;
 }
 
-.addresses {
+.address-book-wrapper .addresses {
   overflow-y: auto;
 }
 
-.address {
+.address-book-wrapper .address {
   margin: 20px 0;
 }
 
-.address:first-child {
+.address-book-wrapper .address:first-child {
   margin-top: 0;
 }
 
-.address:last-child {
+.address-book-wrapper .address:last-child {
   margin-bottom: 0;
 }
 
-.select-button {
-  display: block;
-  margin: 20px auto;
+.address-book-wrapper .buttons {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.address-book-wrapper .buttons button:first-child {
+  margin-right: 20px;
 }

@@ -18,7 +18,12 @@ const FormPage = () => {
   const getPage = () => {
     switch (selectedPage) {
       case 'addressBook':
-        return <AddressesBook onSelect={handleExit} />
+        return (
+          <AddressesBook
+            onSelect={handleExit}
+            onExit={handleExit}
+          />
+        )
       case 'addAddress':
         return <AddAddressPage onExit={handleExit} />
       default:
