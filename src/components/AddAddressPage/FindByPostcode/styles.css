@@ -23,6 +23,10 @@
   position: relative;
 }
 
+.find-by-postcode-wrapper .form-wrapper form {
+  display: flex;
+}
+
 .find-by-postcode-wrapper input {
   width: 300px;
   margin-right: 20px;
