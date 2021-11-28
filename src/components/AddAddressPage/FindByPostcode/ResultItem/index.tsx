@@ -8,7 +8,7 @@ const ResultItem: React.FC<Props> = ({ children, onClick }) => {
 
   return (
     <li
-      className='resoult-item-wrapper'
+      className='result-item-wrapper'
       onClick={onClick}
     >
       {children}
