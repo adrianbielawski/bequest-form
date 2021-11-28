@@ -2,7 +2,7 @@ import { useContext } from "react"
 import './styles.css'
 import Button from "components/Button"
 import AddressItem from "./AddressItem/indes"
-import { AddressesContext } from "./AddressesStore"
+import { AddressesContext } from "store"
 
 interface Props {
   onSelect: () => void

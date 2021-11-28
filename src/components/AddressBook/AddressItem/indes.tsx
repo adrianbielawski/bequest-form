@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import { Address } from "../AddressesStore/types"
+import { Address } from "store/types"
 import './styles.css'
 
 interface Props {

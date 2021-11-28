@@ -2,7 +2,7 @@ import './styles.css'
 import axios from 'axios'
 import Button from "components/Button"
 import Input from 'components/Input'
-import { NewAddress } from 'components/AddressBook/AddressesStore/types'
+import { NewAddress } from 'store/types'
 import React, { useState } from 'react'
 import ResultItem from './ResultItem'
 
@@ -93,21 +93,20 @@ const FindByPostcode: React.FC<Props> = ({ onExit, onSave }) => {
     }
   }
 
-  const parseAddress = (address: NewAddress) => {
+  const formatAddress = (address: NewAddress) => {
     return Object.values(address)
       .filter(a => a.length > 0)
       .join(', ')
-      .replace(' ,', '')
   }
 
   const getAddresses = () => addresses?.map((address, index) => {
-    const hancleClick = () => {
+    const handleClick = () => {
       setSelectedAddress(address)
     }
 
     return (
-      <ResultItem onClick={hancleClick} key={index}>
-        {parseAddress(address)}
+      <ResultItem onClick={handleClick} key={index}>
+        {formatAddress(address)}
       </ResultItem>
     )
   })
@@ -129,7 +128,7 @@ const FindByPostcode: React.FC<Props> = ({ onExit, onSave }) => {
           <Button type='submit'>Find</Button>
         </form>
         {(addresses && !selectedAddress) && (
-          <ul className='addresses'>
+          <ul className='addresses' data-testid='addresses-list'>
             {getAddresses()}
           </ul>
         )}
@@ -141,7 +140,7 @@ const FindByPostcode: React.FC<Props> = ({ onExit, onSave }) => {
       )}
       {selectedAddress && (
         <p className='selected-address'>
-          {parseAddress(selectedAddress)}
+          {formatAddress(selectedAddress)}
         </p>
       )}
       <div className='buttons'>

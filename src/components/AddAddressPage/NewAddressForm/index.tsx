@@ -1,7 +1,7 @@
 import './styles.css'
 import Input from "components/Input"
 import Button from "components/Button"
-import { NewAddress } from 'components/AddressBook/AddressesStore/types'
+import { NewAddress } from 'store/types'
 import React, { useState } from 'react'
 import Select from 'components/Select'
 import { countries } from './countries'
@@ -23,7 +23,7 @@ const NewAddressForm: React.FC<Props> = ({ onSave, onExit }) => {
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (formData) {
+    if (validateForm()) {
       onSave(formData)
     }
   }
@@ -65,8 +65,8 @@ const NewAddressForm: React.FC<Props> = ({ onSave, onExit }) => {
       <Input name='thirdLine' type='text' placeholder='Third line' />
       <Input name='postcode' type='text' placeholder='Postcode' required indicateRequired />
       <Input name='town' type='text' placeholder='Town' required indicateRequired />
-      <Select name='country' placeholder='Country' required indicateRequired>
-        <option disabled selected hidden value=''>
+      <Select name='country' placeholder='Country' required indicateRequired defaultValue=''>
+        <option disabled hidden value=''>
           Country
         </option>
         {getCountries()}

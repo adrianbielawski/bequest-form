@@ -15,7 +15,7 @@ const initialContext: AddressesContextType = {
 export const AddressesContext = createContext(initialContext)
 
 export const reducer = (state: State, action: Action) => {
-  let newState = cloneDeep(state);
+  const newState = cloneDeep(state);
   switch (action.type) {
     case ADD_ADDRESS:
       const address = {
@@ -30,6 +30,6 @@ export const reducer = (state: State, action: Action) => {
       newState.selectedAddress = action.selectedAddress
       return newState;
     default:
-      throw new Error();
+      throw new Error('Invalid Action');
   }
 }

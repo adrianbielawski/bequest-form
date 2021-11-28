@@ -2,9 +2,9 @@ import { useContext, useState } from "react"
 import './styles.css'
 import MainAddAddressPage, { Page } from "./MainAddAddressPage/indes"
 import NewAddressForm from "./NewAddressForm"
-import { ADD_ADDRESS, NewAddress } from "components/AddressBook/AddressesStore/types"
-import { AddressesContext } from "components/AddressBook/AddressesStore/index"
-import FindByPostcode from "./FindByPostcode/indes"
+import { ADD_ADDRESS, NewAddress } from "store/types"
+import { AddressesContext } from "store/index"
+import FindByPostcode from "./FindByPostcode"
 
 interface Props {
   onExit: () => void

@@ -1,6 +1,6 @@
 import './App.css';
 import FormPage from 'components/FormPage';
-import { AddressesContext, initialState, reducer } from 'components/AddressBook/AddressesStore';
+import { AddressesContext, initialState, reducer } from 'store';
 import { useReducer } from 'react';
 
 function App() {
