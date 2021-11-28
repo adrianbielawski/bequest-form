@@ -1,4 +1,8 @@
-.select {
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper .select {
   background-color: var(--light-grey);
   color: var(--grey);
   height: 56px;
@@ -10,6 +14,13 @@
   outline: none;
 }
 
-.select:required:invalid {
+.select-wrapper .select:required:invalid {
   color: var(--mid-grey);
+}
+
+.select-wrapper .required-symbol {
+  color: var(--red);
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
