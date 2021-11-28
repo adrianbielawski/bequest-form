@@ -2,9 +2,8 @@ import './styles.css'
 import axios from 'axios'
 import Button from "components/Button"
 import Input from 'components/Input'
-import { Address, NewAddress } from 'components/AddressBook/AddressesStore/types'
+import { NewAddress } from 'components/AddressBook/AddressesStore/types'
 import React, { useState } from 'react'
-import AddressItem from 'components/AddressBook/AddressItem/indes'
 import ResultItem from './ResultItem'
 
 const GET_ADDRESS_URL = 'https://api.getAddress.io/find'
@@ -147,7 +146,12 @@ const FindByPostcode: React.FC<Props> = ({ onExit, onSave }) => {
       )}
       <div className='buttons'>
         <Button onClick={onExit}>Exit</Button>
-        <Button onClick={handleSave}>Save</Button>
+        <Button
+          disabled={!selectedAddress}
+          onClick={handleSave}
+        >
+          Save
+        </Button>
       </div>
     </div>
   )
