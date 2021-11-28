@@ -2,7 +2,7 @@ import { useContext } from "react"
 import './styles.css'
 import Button from "components/Button"
 import { AddressesContext } from "store"
-import AddressItem from "components/AddressBook/AddressItem/indes"
+import AddressItem from "components/AddressBook/AddressItem"
 
 export type Page = 'addressBook' | 'addAddress'
 

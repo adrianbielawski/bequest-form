@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import './styles.css'
 import Button from "components/Button"
-import AddressItem from "./AddressItem/indes"
+import AddressItem from "./AddressItem"
 import { AddressesContext } from "store"
 
 interface Props {

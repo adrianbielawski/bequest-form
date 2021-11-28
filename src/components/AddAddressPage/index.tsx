@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import './styles.css'
-import MainAddAddressPage, { Page } from "./MainAddAddressPage/indes"
+import MainAddAddressPage, { Page } from "./MainAddAddressPage"
 import NewAddressForm from "./NewAddressForm"
 import { ADD_ADDRESS, NewAddress } from "store/types"
 import { AddressesContext } from "store/index"
