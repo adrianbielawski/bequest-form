@@ -48,6 +48,7 @@ const AddAddressPage: React.FC<Props> = ({ onExit }) => {
         return (
           <MainAddAddressPage
             onChange={handlePageChange}
+            onExit={onExit}
           />
         )
     }

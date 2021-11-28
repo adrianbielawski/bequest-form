@@ -5,9 +5,10 @@ export type Page = 'findByPostcode' | 'enterAddress'
 
 interface Props {
   onChange: (page: Page) => void
+  onExit: () => void
 }
 
-const MainAddAddressPage: React.FC<Props> = ({ onChange }) => {
+const MainAddAddressPage: React.FC<Props> = ({ onChange, onExit }) => {
   const handleFindAddressClick = () => {
     onChange('findByPostcode')
   }
@@ -24,6 +25,9 @@ const MainAddAddressPage: React.FC<Props> = ({ onChange }) => {
       <p className='or'>Or</p>
       <Button onClick={handleEnterAddressClick}>
         Enter address manually
+      </Button>
+      <Button className='exit-button' onClick={onExit}>
+        Exit
       </Button>
     </div>
   )
