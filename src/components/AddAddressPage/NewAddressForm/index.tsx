@@ -35,6 +35,19 @@ const NewAddressForm: React.FC<Props> = ({ onSave, onExit }) => {
     })
   }
 
+  const validateForm = () => {
+    if (
+      !formData.firstLine.length
+      || !formData.postcode.length
+      || !formData.town.length
+      || !formData.country.length
+    ) {
+      return false
+    }
+
+    return true
+  }
+
   const getCountries = () => countries.map(country => (
     <option key={country.label}>
       {country.label}
@@ -47,20 +60,28 @@ const NewAddressForm: React.FC<Props> = ({ onSave, onExit }) => {
       onChange={handleChange}
       onSubmit={handleSubmit}
     >
-      <Input name='firstLine' type='text' placeholder='First line' required />
+      <Input name='firstLine' type='text' placeholder='First line' required indicateRequired />
       <Input name='secondLine' type='text' placeholder='Second line' />
       <Input name='thirdLine' type='text' placeholder='Third line' />
-      <Input name='postcode' type='text' placeholder='Postcode' required />
-      <Input name='town' type='text' placeholder='Town' required />
-      <Select name='country' placeholder='Country' required>
+      <Input name='postcode' type='text' placeholder='Postcode' required indicateRequired />
+      <Input name='town' type='text' placeholder='Town' required indicateRequired />
+      <Select name='country' placeholder='Country' required indicateRequired>
         <option disabled selected hidden value=''>
           Country
         </option>
         {getCountries()}
       </Select>
+      <p className='required-text'>
+        * Required fields
+      </p>
       <div className='buttons-wrapper'>
         <Button onClick={onExit}>Exit</Button>
-        <Button type='submit'>Save</Button>
+        <Button
+          type='submit'
+          disabled={!validateForm()}
+        >
+          Save
+        </Button>
       </div>
     </form>
   )

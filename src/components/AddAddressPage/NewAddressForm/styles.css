@@ -14,6 +14,10 @@
   width: 300px;
 }
 
+.new-address-form-wrapper .required-text {
+  color: var(--red);
+}
+
 .new-address-form-wrapper .buttons-wrapper {
   display: flex;
   gap: 20px;
